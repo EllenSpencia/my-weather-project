@@ -1,0 +1,107 @@
+/* I still working in my background and icons, trying to figure it out. I will change code in few days*/
+
+h1 {
+  font-family: "Rajdhani", sans-serif;
+  color: #048998;
+  font-size: 45px;
+  line-height: 35px;
+}
+p {
+  font-family: "Anybody", cursive;
+  font-size: 18px;
+}
+.main-temp {
+  font-family: "Anybody", cursive;
+  font-size: 100px;
+  color: #3bb4c1;
+}
+.units {
+  font-family: "Anybody", cursive;
+  font-size: 20px;
+  position: relative;
+  bottom: 20%;
+  left: 3%;
+}
+a {
+  text-decoration: none;
+  color: black;
+  transition: all 200ms ease-in-out;
+}
+a:hover {
+  color: whitesmoke;
+  transform: scale(110%);
+}
+.first-column {
+  padding: 30px 0px 0px 35px;
+  background-image: url("../image/coastpic.jpeg");
+  background-size: 118%;
+  background-position-y: 25%;
+}
+
+.icons-weather {
+  padding: 20px 30px 10px 35px;
+  background-image: url("../image/coastpic_blur_bottom.jpeg");
+  background-size: 122%;
+  background-position-x: 18%;
+}
+.sym {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: whitesmoke;
+}
+.search-form {
+  padding: 20px 15px;
+  background-color: #e3e3e3;
+}
+.num1 {
+  font-size: 60px;
+  position: relative;
+  right: 6%;
+  top: 2%;
+}
+.icons {
+  font-size: 35px;
+}
+.details-c {
+  background-color: #e3e3e3;
+  font-family: "Anybody", cursive;
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  padding: 0px 20px 0px;
+}
+h3 {
+  font-family: "Rajdhani", sans-serif;
+  text-decoration: underline;
+  font-size: 22px;
+  color: #3bb4c1;
+  position: relative;
+  bottom: 5%;
+}
+button {
+  border: none;
+}
+.numbers-d {
+  color: #048998;
+  position: relative;
+  left: 10%;
+  font-size: 19px;
+}
+.cities {
+  font-family: "Anybody", cursive;
+  font-size: 18px;
+  text-align: left;
+  padding: 0px 10px 0px;
+}
+.parameters {
+  position: relative;
+  bottom: 20%;
+  font-size: 18px;
+}
+.loc-but {
+  border: 0;
+  position: relative;
+  left: 3%;
+  color: #3bb4c1;
+}
