@@ -105,3 +105,10 @@ button {
   left: 3%;
   color: #3bb4c1;
 }
+.source-link {
+  color: #3bb4c1;
+  transition: all 200ms ease-in-out;
+}
+.source-link:hover {
+  color: black;
+}
