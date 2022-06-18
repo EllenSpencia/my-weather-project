@@ -62,6 +62,11 @@ function showWeather(response) {
   windD.innerHTML = Math.round(response.data.wind.speed) + " km/h";
   let generalW = document.querySelector("#general");
   generalW.innerHTML = Math.round(response.data.main.feels_like) + " °";
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 let searchClick = document.querySelector("form");
 searchClick.addEventListener("submit", searchEngine, showWeather);
