@@ -49,7 +49,7 @@ function searchCity(city) {
 
 function showWeather(response) {
   console.log(response);
-  let currentTemp = celsiusTemperature;
+  let currentTemp = Math.round(response.data.main.temp);
   let todayTemp = document.querySelector("#main-temper");
   todayTemp.innerHTML = `${currentTemp}`;
   let searchCityName = document.querySelector("#city");
@@ -90,9 +90,17 @@ function showFahrenheitTemperature(event) {
   let temperatureElement = document.querySelector("#main-temper");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
-
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#main-temper");
+  temperatureElement.innerHTML = celsiusTemperature;
+}
 let celsiusTemperature = null;
+
 let fahrenheitLink = document.querySelector("#f-sym");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#c-sym");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 searchCity();

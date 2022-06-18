@@ -112,3 +112,6 @@ button {
 .source-link:hover {
   color: black;
 }
+.active {
+  cursor: default;
+}
