@@ -49,7 +49,7 @@ function searchCity(city) {
 
 function showWeather(response) {
   console.log(response);
-  let currentTemp = Math.round(response.data.main.temp);
+  let currentTemp = celsiusTemperature;
   let todayTemp = document.querySelector("#main-temper");
   todayTemp.innerHTML = `${currentTemp}`;
   let searchCityName = document.querySelector("#city");
@@ -67,6 +67,7 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  celsiusTemperature = Math.round(response.data.main.temp);
 }
 let searchClick = document.querySelector("form");
 searchClick.addEventListener("submit", searchEngine, showWeather);
@@ -83,16 +84,15 @@ function currLocationSearch(event) {
 let searchCurrentLoc = document.querySelector("#current-loc");
 searchCurrentLoc.addEventListener("click", currLocationSearch);
 
-//function faren() {
-//let farenheit = document.querySelector("#main-temper");
-//farenheit.innerHTML = `66°`;
-//}
-//let rightUnit = document.querySelector("#f-sym");
-//rightUnit.addEventListener("click", faren);
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#main-temper");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 
-//function celsius() {
-//let cels = document.querySelector("#main-temper");
-//cels.innerHTML = `11°`;
-//}
-//let leftUnit = document.querySelector("#c-sym");
-//leftUnit.addEventListener("click", celsius);
+let celsiusTemperature = null;
+let fahrenheitLink = document.querySelector("#f-sym");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+searchCity();
