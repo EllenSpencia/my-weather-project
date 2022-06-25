@@ -78,8 +78,8 @@
             <div class="col cities">
               <br />
               <hr />
-              Birmingham <br />
-              Manchester <br />
+              London <br />
+              Paris <br />
               New York <br />
               Helsinki <br />
               <hr />
@@ -89,80 +89,26 @@
       </div>
       <div class="row gx-5">
         <div class="col-7 border icons-weather border border-top-0">
-          <div class="row">
-            <div class="col sym">
-              TUE <br />
-              <div class="icons">
-                <img
-                  src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-sun-weather-justicon-flat-justicon-1.png"
-                />
+          <div class="weather-forecast" id="forecast"></div>
+          <div class="col-3 border border-top-0 details-c">
+            <h3>Weather Details</h3>
+            <div class="row">
+              <div class="col parameters">
+                cloudy<br />
+                humidity <br />wind <br />feels like
               </div>
-              10°
-            </div>
-            <div class="col sym">
-              WED <br />
-              <div class="icons">
-                <img
-                  src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-storm-weather-justicon-flat-justicon-2.png"
-                />
+              <div class="col numbers-d">
+                <span id="cloud">0% </span>
+                <br /><span id="humidity">53%</span> <br /><span id="wind"
+                  >2km/h</span
+                >
+                <br /><span id="general"> 9° </span>
               </div>
-              8°
-            </div>
-            <div class="col sym">
-              THU <br />
-              <div class="icons">
-                <img
-                  src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-cloud-weather-justicon-flat-justicon.png"
-                />
-              </div>
-              9°
-            </div>
-            <div class="col sym">
-              FRI <br />
-              <div class="icons">
-                <img
-                  src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-rainy-weather-justicon-flat-justicon-1.png"
-                />
-              </div>
-              5°
-            </div>
-            <div class="col sym">
-              SAT <br />
-              <div class="icons">
-                <img
-                  src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-cloudy-weather-justicon-flat-justicon-1.png"
-                />
-              </div>
-              7°
-            </div>
-            <div class="col sym">
-              SUN <br />
-              <div class="icons">
-                <img
-                  src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-storm-weather-justicon-flat-justicon-3.png"
-                />
-              </div>
-              8°
-            </div>
-          </div>
-        </div>
-        <div class="col-3 border border-top-0 details-c">
-          <h3>Weather Details</h3>
-          <div class="row">
-            <div class="col parameters">
-              cloudy<br />
-              humidity <br />wind <br />feels like
-            </div>
-            <div class="col numbers-d">
-              <span id="cloud">0% </span>
-              <br /><span id="humidity">53%</span> <br /><span id="wind"
-                >2km/h</span
-              >
-              <br /><span id="general"> 9° </span>
             </div>
           </div>
         </div>
       </div>
+
       <span class="source"
         ><a
           class="source-link"

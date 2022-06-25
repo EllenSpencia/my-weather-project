@@ -31,6 +31,27 @@ if (currentMinutes < 10) {
   currentMinutes = `0${currentMinutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  forecastHTML =
+    forecastHTML +
+    `
+  <div class="row">
+            <div class="col sym">
+              TUE <br />
+              <div class="icons">
+                <img
+                  src="https://openweathermap.org/img/wn/50d@2x.png"
+                />
+              </div>
+              10°
+            </div>
+          </div>
+        </div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let newDay = document.querySelector("#day");
 newDay.innerHTML = `${currentDay} ${currentDate}. ${currentMonth} <br /> ${currentHour}:${currentMinutes}`;
 
@@ -103,4 +124,5 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 let celsiusLink = document.querySelector("#c-sym");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
-searchCity();
+searchCity("Helsinki");
+displayForecast();
