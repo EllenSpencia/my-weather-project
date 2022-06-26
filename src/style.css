@@ -39,7 +39,7 @@ a:hover {
 }
 
 .icons-weather {
-  padding: 20px 30px 10px 35px;
+  padding: 10px 10px 5px 10px;
   background-image: url("../image/coastpic_blur_bottom.jpeg");
   background-size: 122%;
   background-position-x: 18%;
@@ -114,4 +114,12 @@ button {
 }
 .active {
   cursor: default;
+}
+.weather-forecast {
+  margin: 0 auto;
+}
+.weather {
+  width: 85px;
+  margin: 0 auto;
+  padding: 0px;
 }

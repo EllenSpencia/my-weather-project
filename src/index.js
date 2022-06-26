@@ -30,22 +30,39 @@ let currentMonth = months[date.getMonth()];
 if (currentMinutes < 10) {
   currentMinutes = `0${currentMinutes}`;
 }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return days[day];
+}
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  forecastHTML =
-    forecastHTML +
-    `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col sym">
-              TUE <br />
+            <div class="weather-forecast-date">${formatDay(
+              forecastDay.dt
+            )}</div>
+               
               <div class="icons">
-                <img
-                  src="https://openweathermap.org/img/wn/50d@2x.png"
+                <img class="weather"
+                  src="https://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png"
                 />
               </div>
-              10°
+              ${Math.round(forecastDay.temp.day)}°
             </div>`;
+    }
+  });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
@@ -64,6 +81,13 @@ function searchCity(city) {
   let apiKey = "893bb34b6d15090daae952066e9d9eb4";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "893bb34b6d15090daae952066e9d9eb4";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
@@ -87,6 +111,7 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   celsiusTemperature = Math.round(response.data.main.temp);
+  getForecast(response.data.coord);
 }
 let searchClick = document.querySelector("form");
 searchClick.addEventListener("submit", searchEngine, showWeather);
@@ -123,4 +148,3 @@ let celsiusLink = document.querySelector("#c-sym");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 searchCity("Helsinki");
-displayForecast();
