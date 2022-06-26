@@ -33,11 +33,10 @@ if (currentMinutes < 10) {
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = "";
+  let forecastHTML = `<div class="row">`;
   forecastHTML =
     forecastHTML +
     `
-  <div class="row">
             <div class="col sym">
               TUE <br />
               <div class="icons">
@@ -46,9 +45,8 @@ function displayForecast() {
                 />
               </div>
               10°
-            </div>
-          </div>
-        </div>`;
+            </div>`;
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
