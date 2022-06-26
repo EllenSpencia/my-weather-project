@@ -3,6 +3,11 @@ body {
   background-image: url("../image/body_back.jpeg");
   background-size: cover;
 }
+.container {
+  position: relative;
+  left: 110px;
+  top: 70px;
+}
 h1 {
   font-family: "Rajdhani", sans-serif;
   color: #048998;
