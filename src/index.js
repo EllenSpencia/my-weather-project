@@ -127,24 +127,5 @@ function currLocationSearch(event) {
 
 let searchCurrentLoc = document.querySelector("#current-loc");
 searchCurrentLoc.addEventListener("click", currLocationSearch);
-
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#main-temper");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#main-temper");
-  temperatureElement.innerHTML = celsiusTemperature;
-}
 let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#f-sym");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#c-sym");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
-
 searchCity("Helsinki");

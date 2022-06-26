@@ -16,8 +16,8 @@ p {
   color: #3bb4c1;
 }
 .units {
-  font-family: "Anybody", cursive;
-  font-size: 20px;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 25px;
   position: relative;
   bottom: 20%;
   left: 3%;
@@ -57,7 +57,7 @@ a:hover {
 .num1 {
   font-size: 60px;
   position: relative;
-  right: 8.5%;
+  right: 6%;
   top: 2%;
 }
 .icons {
