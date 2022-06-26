@@ -1,5 +1,8 @@
 /* I still working in my background and icons, trying to figure it out. I will change code in few days*/
-
+body {
+  background-image: url("../image/body_back.jpeg");
+  background-size: cover;
+}
 h1 {
   font-family: "Rajdhani", sans-serif;
   color: #048998;
